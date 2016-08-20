@@ -9,7 +9,9 @@ app.use(express.static('public'));
 
 // Require and use Body Parser
 var bodyParser = require('body-parser');
+// Support JSON-encoded bodies
 app.use(bodyParser.json());
+app.use(express.json());
 
 // Require mongoose
 var mongoose = require("mongoose");
