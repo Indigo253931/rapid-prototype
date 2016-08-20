@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Creates app module -->
 <html ng-app="MainStrain">
 <head>
 	<title>Main Strain</title>
@@ -15,5 +16,28 @@
 </head>
 
 <body>
+	<!-- Main div -->
+	<div class="container">
+		<!-- Navbar -->
+		<header class="navbar">
+			<h1>Main Strain</h1>
+		</header>
+
+		<section id="strains">
+			<div ng-view>
+
+			</div>
+		</section>
+		<br>
+		<!-- Strain form -->
+		<form ng-controller="StrainPostController as postCtrl" ng-submit="postCtrl.postStrain()">
+			<div>
+				<label for="newStrain-name">Name:</label>
+				<input type="text" id="newStrain-name" ng-model="newStrain.name" placeholder="Purple Haze">
+			</div>
+
+
+		</form>
+	</div>
 </body>
 </html>
