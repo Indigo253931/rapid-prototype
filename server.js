@@ -34,8 +34,8 @@ app.get('/', function(req,res){
 app.get('/api/strains', function(req, res){
 	// Find strain data from database and save it as a variable 'strains'
 	var strains = db.Strain.find(function(err, data){
-	// Send all strain reccomendations as JSON response
-	res.json(data);
+		// Send all strain reccomendations as JSON response
+		res.json(data);
 	});
 });
 
@@ -43,8 +43,12 @@ app.get('/api/strains', function(req, res){
 app.get('/api/strains/:id', function(req, res){
 	// Find one strain by Id
 	db.Strain.findOne({_id: req.params.id}, function(err, data){
+		// Send one strain reccomendation as JSON response
 		res.json(data);
 	});
 });
 
+app.post('/api/strains', function(req, res){
+	// Create a new strain reccomendation
+});
 

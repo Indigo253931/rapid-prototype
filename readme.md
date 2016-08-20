@@ -1,17 +1,36 @@
-Trello board:
+/////////////////////////////
+// 		 Trello
+/////////////////////////////
+
 https://trello.com/b/zOg3ctfH/mystrain
 
-Wireframes:
 
-Main Strain is an application built to enable cannabis users to submit a form
-which in turn will provide a sorted or randomly shuffled list of strain reccomendations which offer the top support/experience/outcome depending on the available options and submitted information. 
-
-A user will be able to read, create, update and delete a strain reccomendation.
+/////////////////////////////
+//  	Wireframes
+/////////////////////////////
 
 
-Workflow:
+/////////////////////////////
+// 		 About
+/////////////////////////////
 
-Use npm to require express:
+Main Strain is a strain reccomendation service built to enable cannabis to read, create, update and delete a strain reccomendation.
+
+Users will also be able to submit a form which will provide a list of strain reccomendations based on information submitted in the form. 
+The form attributes will be CRUD-able. 
+
+Results provided may be sorted based on best pairing, or randomly shuffled to provide a variety of choices for the user. 
+
+
+/////////////////////////////
+//  	Workflow
+/////////////////////////////
+
+Organize folder and file structure.
+	
+	Create client and server directories.
+
+Use NPM to require Express:
 	
 	Initialize node in directory with 'npm init -y'.
 
@@ -20,4 +39,6 @@ Use npm to require express:
 	Package.json will track project associated dependencies and metadata.
 	
 	Add 'node_modules' to .gitignore file so it is not tracked by git.
+
+Require Mongoose in server.js
 
