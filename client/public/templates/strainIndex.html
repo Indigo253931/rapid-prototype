@@ -1,11 +1,13 @@
 <section id='strains' class='container'>
+<!-- Repeat directive iterates over strains collection to render each strain--> 
 	<div ng-repeat='strain in strains'>
 		<div>
-			<p><a href='/#/strains/{{strain._id}}'>{{strain.name}}</a></p>
-			<p>{{strain.kind}}</p>
-			<p>{{strain.activity}}</p>
-			<p>{{strain.description}}</p>
+			<h2 class="strain-name"><a href='/#/strains/{{strain._id}}'>{{strain.name}}</a></h2>
+				<ul>
+					<li>{{strain.kind}}</li>
+					<li>{{strain.activity}}</li>
+					<li>{{strain.description}}</li>
+				</ul>
 		</div>
 	</div>
-
 </section>
