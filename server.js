@@ -16,6 +16,10 @@ app.use(express.json());
 // Require mongoose
 var mongoose = require("mongoose");
 
+// Require model
+var Book = require('./models/strain');
+
+
 /************
  * DATABASE *
  ************/
@@ -29,7 +33,7 @@ var strains = [];
 var nextId = 1;
 
 ////////////////////
-//  ROUTES
+//  API ROUTES
 ///////////////////
 
 
@@ -37,6 +41,7 @@ var nextId = 1;
  * HTML Endpoints
  */
 
+// Serve static files from public folder
 app.get('/', function homepage (req,res) {
 	res.sendFile(__dirname + '/public/index.html');
 });
@@ -89,6 +94,12 @@ app.post('/api/strains/:strainId', function create (req, res) {
 		});
 });
 
+// Connect to mongodb
+mongoose.connect(
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL ||
+  'mongodb://localhost/crud-api'
+);
 
 
 /**********
