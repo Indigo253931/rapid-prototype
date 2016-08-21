@@ -34,9 +34,6 @@ var db = require('./models');
 var strains = [];
 var nextId = 1;
 
-app.get('/', function homepage (req,res) {
-	res.sendFile('/public/index.html', { root : __dirname});
-});
 
 ////////////////////
 //  API ROUTES
@@ -45,6 +42,11 @@ app.get('/', function homepage (req,res) {
 /*
  * HTML Endpoints
  */
+
+
+// app.get('/', function homepage (req,res) {
+// 	res.sendFile('/public/index.html', { root : __dirname});
+// });
 
 // Serve static files from public folder
 app.get('/', function homepage (req,res) {
@@ -65,26 +67,26 @@ app.get('/', function homepage (req,res) {
  	});
  });
 
-// //Get all strain reccomendations
-app.get('/api/strains', function strains_index (req, res){
+//Get all strain pairing reccomendations
+app.get('/api/strains', function strainsIndex (req, res){
 	// Find strain data from database and save it as a variable 'strains'
 	db.Strain.find({}, function(err, strains){
-		// Send all strain reccomendations as JSON response
+		// Send all strain pairing reccomendations as JSON response
 		res.json(strains);
 	});
 });
 
-// Get one strain reccomendation 
+// Get one strain pairing reccomendation
 app.get('/api/strains/:id', function strainsShow(req, res){
 	console.log('requested strain id=', req.params.id);
-		// ' Find one strain by Id
+		// Find one strain pairing reccomendation by Id
 	db.Strain.findOne({_id: req.params.id}, function(err, data){
-		// Send one strain reccomendation as JSON response
+		// Send one strain pairing reccomendation as JSON response
 		res.json(strain);
 	});
 });
 
-// Create new strain reccomendation
+// Create new strain pairing reccomendation
 app.post('/api/strains/:strainId', function create (req, res) {
 	console.log('body', req.body);
 	db.Strain.findOne({_id: req.params.strainId}, function(err, album){
@@ -92,7 +94,7 @@ app.post('/api/strains/:strainId', function create (req, res) {
 			var strain = new db.Strain(req.body);
 				strains.push(strain);
 				strain.save(function(err, savedStrain){
-				console.log('Strain reccomendation saved:', savedStrain);
+				console.log('Strain pairing reccomendation saved:', savedStrain);
 				res.json(strain);
 			});
 		});
@@ -102,7 +104,7 @@ app.post('/api/strains/:strainId', function create (req, res) {
 mongoose.connect(
   process.env.MONGOLAB_URI ||
   process.env.MONGOHQ_URL ||
-  'mongodb://localhost/crud-api'
+  'mongodb://localhost/api/strains'
 );
 
 

@@ -14,7 +14,6 @@ app.get('/', function(req, res) {
   res.send('You are Home!');
 });
 
-
 // Create strain array 
 var strains = [];
 
@@ -39,6 +38,7 @@ $.update({
 	templateUrl: '/api/strains/id'
 });
 
+
 ALL_STRAINS = [
 {
 	'name': 'Cinex',
@@ -56,18 +56,11 @@ ALL_STRAINS = [
 	'name': 'Durban Poison',
 	'kind': 'Sativa',
 	'activity': 'Skiing',
-	'description': 'Unforgettable experience'
+	'description': 'An unforgettable skiing experience!'
 },
 {
 	'name': 'Sour Diesel',
 	'kind': 'Sativa',
-	'activity': ['Art', 'Concerts', 'Hiking'],
-	'description': ' An energetic, exhilarating sativa that induces intense cerebral effects. Sour D is extremely fast-acting and is said to be a great mood-booster that won’t knock you on your ass. Users report feeling uplifted, happy, and energetic, with an overall sense of euphoria. We would highly recommend using a strain such as Sour Diesel if you’re in the mood to get active.'
-},
-{
-	'name': 'Alaska ThunderF*ck',
-	'kind': 'Sativa',
-	'activity': ['Netflix: Sense8'],
-	'description': 'Powerful and thought-provoking, this powerful strain is the perfect compliment to the reality-bending sci-fi show from the Wachowski siblings. With AT’s help, follow the interconnected stories of eight individuals around the globe as they use their unique powers of communication to fight the man hunting them down.'},
-
-];
+	'activity': 'Concerts',
+	'description': 'An energetic, exhilarating sativa that induces intense cerebral effects. Sour D is extremely fast-acting and is said to be a great mood-booster that won’t knock you on your ass. Users report feeling uplifted, happy, and energetic, with an overall sense of euphoria. We would highly recommend using a strain such as Sour Diesel if you’re in the mood to get active.'
+}];

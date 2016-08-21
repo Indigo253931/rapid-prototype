@@ -1,0 +1,20 @@
+{
+  "name": "rapid-prototype",
+  "description": "Trello board: https://trello.com/b/zOg3ctfH/mystrain",
+  "main": "server.js",
+  "authors": [
+    "Indigo253931 <indigo253931@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/Indigo253931/rapid-prototype",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8"
+  }
+}

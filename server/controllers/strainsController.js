@@ -8,7 +8,7 @@ angular.module('MyStrain')
 			controller: 'StrainsCtrl'
 		})
 		.when('strains/:id', {
-			templateUrl: '/templates/strains-show.htmkl',
+			templateUrl: '/templates/strains-show.html',
 			controller: 'StrainsShowCrl'
 		});
 	});
@@ -16,6 +16,9 @@ angular.module('MyStrain')
 
 var Strain = require('../models/Strain');
 
+/////////////////
+// CONTROLLERS //
+/////////////////
 StrainsIndexCtrl.$inject=['$resource', 'StrainService'];
 StrainsShowCtrl.$inject=['$resource', 'StrainService'];
 

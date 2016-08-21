@@ -3,7 +3,9 @@ var Schema = mongoose.Schema;
 
 var StrainSchema = new Schema({
 	name: String,
-	activity: String
+	kind: String,
+	activity: String,
+	description: String
 });
 
 var Strain = mongoose.model('Strain', StrainSchema);
