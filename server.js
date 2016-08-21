@@ -16,6 +16,11 @@ app.use(express.json());
 // Require mongoose
 var mongoose = require("mongoose");
 
+/************
+ * DATABASE *
+ ************/
+var db = require('./models');
+
 ////////////////////
 //  DATA
 ///////////////////
@@ -27,33 +32,70 @@ var nextId = 1;
 //  ROUTES
 ///////////////////
 
-// Define the root route: localhost:3000/
-app.get('/', function(req,res){
-	res.sendFile('index.html', { root : __dirname});
+
+/*
+ * HTML Endpoints
+ */
+
+app.get('/', function homepage (req,res) {
+	res.sendFile(__dirname + '/public/index.html');
 });
 
-//Get all strain reccomendations
-app.get('/api/strains', function(req, res){
+
+/*
+ * JSON API Endpoints
+ */
+ app.get('/api', function api_index (req, res) {
+ 	res.json({
+ 		message: 'Welcome to MyStrain!',
+ 		documentation_url: 'https://github.com/Indigo253931/rapid-prototype',
+ 		base_url: 'http://mystrain.herokuapp.com',
+ 		endpoints: [
+ 		{method:'GET', path: '/api/strains', description: 'Describes available endpoints'}
+ 		]
+ 	});
+ });
+
+// //Get all strain reccomendations
+app.get('/api/strains', function strains_index (req, res){
 	// Find strain data from database and save it as a variable 'strains'
-	var strains = db.Strain.find(function(err, data){
+	db.Strain.find({}, function(err, strains){
 		// Send all strain reccomendations as JSON response
-		res.json(data);
+		res.json(strains);
 	});
 });
 
 // Get one strain reccomendation 
-app.get('/api/strains/:id', function(req, res){
-	// Find one strain by Id
+app.get('/api/strains/:id', function strainsShow(req, res){
+	console.log('requested strain id=', req.params.id);
+		// ' Find one strain by Id
 	db.Strain.findOne({_id: req.params.id}, function(err, data){
 		// Send one strain reccomendation as JSON response
-		res.json(data);
+		res.json(strain);
 	});
 });
 
-app.post('/api/strains', function(req, res){
-	// Create a new strain reccomendation
+// Create new strain reccomendation
+app.post('/api/strains/:strainId', function create (req, res) {
+	console.log('body', req.body);
+	db.Strain.findOne({_id: req.params.strainId}, function(err, album){
+		if (err) {console.log('error', err); }
+			var strain = new db.Strain(req.body);
+				strains.push(strain);
+				strain.save(function(err, savedStrain){
+				console.log('Strain reccomendation saved:', savedStrain);
+				res.json(strain);
+			});
+		});
 });
 
+
+
+/**********
+ * SERVER *
+ **********/
+
+// Listen on port 3000
 app.listen(process.env.PORT || 3000, function(){
 console.log('Exoress server is up and running on http://localhost:/3000/');
 });
