@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<!-- Turns HTML into Angular application -->
+<!-- Tell HTML to use Angular -->
 <html ng-app="MyStrain">
 <head>
-	<title>My Strain</title>
-<!-- Styles -->
-<link rel="stylesheet" href="styles/style.css">
-<!-- Angular -->
-<script type="text/javascript" src="bower_components/angular/angular.js"></script>
-<!-- API -->
-<!-- <scripts src=""></script> -->
-<!-- Require app after Angular -->
-<script src="scripts/app.js"></script>
-<!-- Controller -->
-<script src="scripts/controllers/mainStrainController.js"></script>
-<!-- Directive -->
-<script src="scripts/directives/mainStrainDirective.js"></script>
+		<title>My Strain</title>
+	<!-- Styles -->
+	<link rel="stylesheet" href="styles/style.css">
+	<!-- Angular first-->
+	<script type="text/javascript" src="bower_components/angular/angular.js">	
+	</script>
+	<!-- API -->
+	<!-- <scripts src=""></script> -->
+	<!-- App -->
+	<script src="scripts/app.js"></script>
+	<!-- Controller -->
+	<script src="scripts/controllers/mainStrainController.js"></script>
+	<!-- Directive -->
+	<script src="scripts/directives/mainStrainDirective.js"></script>
 </head>
-
 	<body>
 		<!-- Main div -->
 		<div class="container">
 			<!-- Navbar -->
 			<header class="navbar">
-				<h1>Main Strain</h1>
+				<h1>My Strain</h1>
 			</header>
 
 			<section id="strains">
@@ -32,10 +32,13 @@
 			</section>
 			<br>
 			<!-- Strain pairing form -->
+
+			<!-- Register a controller for section of application. -->
 			<form ng-controller="StrainPostController as postCtrl" ng-submit="postCtrl.postStrain()">
 				<!-- Name input -->
 				<div>
 					<label for="newStrain-name">Name:</label>
+					<!-- Bind HTML element's value to model. -->
 					<input type="text" id="newStrain-name" ng-model="newStrain.name" placeholder="Purple Haze">
 				</div>
 				<!-- Kind input -->
@@ -48,7 +51,6 @@
 					<label for="newStrain-activity">Activity:</label>
 					<input type="text" id="newStrain-activity" ng-model="newStrain.activity" placeholder="Hiking">
 				</div>
-
 				<!-- Description input -->
 				<div>
 					<label for="newStrain-description">Description:</label>

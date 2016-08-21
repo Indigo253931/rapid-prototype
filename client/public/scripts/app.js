@@ -1,4 +1,4 @@
-// Use Angular's app module and resource directive
+// Create an Angular module and use resource directive
 var app = angular.module('MyStrain', ['ngRoute', 'ngResource']);
 
 console.log('Angular is working!');
@@ -38,6 +38,7 @@ $.update({
 	templateUrl: '/api/strains/id'
 });
 
+// Seed Data
 
 ALL_STRAINS = [
 {

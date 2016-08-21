@@ -31,23 +31,60 @@ My Strain is a cannabis strain pairing guide.
 
  Additionally, users are enabled to create, read, update and delete a strain pairing reccomendation.
 
-	
-
 
 /////////////////////////////
 //  	Workflow
 /////////////////////////////
 
-Organize folder and file structure.
+Create directories and files.
+
+	Client directory for front-end
+
+		Scripts directory
+			app.js
+			Controllers directory
+				strainDirective.js
+				strainController.js
+
+		Styles directory
+			style.css
+
+		Templates directory
+			strainIndex.html
+			strainShow.html
+			strainDirective.html
+			
+		index.html
+
+	Server directory for back-end
+
+		Controllers directory
+			strainsController.js
+		Models directory
+			index.js
+			strain.js
+		Routes directory
+			routes.js
+
+	server.js
+
+
+Install Bower for front-end dependencies 
 	
-	Create client and server directories.
+	Use 'npm install -g bower'. 
+	Bower enables local file installation. 
+	
+	Initialize with 'bower init' to generate bower.json file. 
+	This will provide a way to share code without sending third-party libraries.
+
+	Use'bower install --save angular' to pull down Angular.
+
+	Link index.html to Angular with '<script type="text/javascript" src="bower_components/angular/angular.js"></script>' above app.js's script link
 
 Use NPM to require Express:
 	
 	Initialize node in directory with 'npm init -y'.
-
 	Install express with 'npm install --save express'.
-
 	Package.json will track project associated dependencies and metadata.
 	
 	Add 'node_modules' to .gitignore file so it is not tracked by git.

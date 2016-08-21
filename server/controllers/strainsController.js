@@ -5,11 +5,11 @@ angular.module('MyStrain')
 		$routeProvider
 		.when('/', {
 			templateUrl: '/templates/strains-index.html',
-			controller: 'StrainsCtrl'
+			controller: 'StrainsIndexCtrl'
 		})
 		.when('strains/:id', {
 			templateUrl: '/templates/strains-show.html',
-			controller: 'StrainsShowCrl'
+			controller: 'StrainsShowCtrl'
 		});
 	});
 

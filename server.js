@@ -34,6 +34,9 @@ var db = require('./models');
 var strains = [];
 var nextId = 1;
 
+app.get('/', function homepage (req,res) {
+	res.sendFile('/public/index.html', { root : __dirname});
+});
 
 ////////////////////
 //  API ROUTES
@@ -42,11 +45,6 @@ var nextId = 1;
 /*
  * HTML Endpoints
  */
-
-
-// app.get('/', function homepage (req,res) {
-// 	res.sendFile('/public/index.html', { root : __dirname});
-// });
 
 // Serve static files from public folder
 app.get('/', function homepage (req,res) {
