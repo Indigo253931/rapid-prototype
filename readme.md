@@ -14,12 +14,24 @@ https://trello.com/b/zOg3ctfH/mystrain
 // 		 About
 /////////////////////////////
 
-Main Strain is a strain reccomendation service built to enable cannabis to read, create, update and delete a strain reccomendation.
+My Strain is a cannabis strain pairing guide. 
 
-Users will also be able to submit a form which will provide a list of strain reccomendations based on information submitted in the form. 
-The form attributes will be CRUD-able. 
+	Results provided may be sorted based on best pairing, or randomly shuffled to provide a variety of choices for the user. 
 
-Results provided may be sorted based on best pairing, or randomly shuffled to provide a variety of choices for the user. 
+		Categories and their subcategories include but are not limited to the following:
+		 Activities: (studying, surfing, meditation, etc.) 
+		 Conditions (insomnia, cancer, etc.)
+		 Symptoms: (headache, nausea, etc.)
+		 Beverages (coffee, beer, wine, etc.)
+		 Food (recipies, ingredients, etc.)
+		 Music (genres, songs, albums, etc.)
+		 Films (genres, movies, episodes)
+		 Games
+
+
+ Additionally, users are enabled to create, read, update and delete a strain pairing reccomendation.
+
+	
 
 
 /////////////////////////////
@@ -41,4 +53,17 @@ Use NPM to require Express:
 	Add 'node_modules' to .gitignore file so it is not tracked by git.
 
 Require Mongoose in server.js
+
+
+Send two http requests to server
+	Use ngResource
+
+Use two client-side routes with associated templates and controllers
+	Use ngRoute
+
+Use Anguar's built in directives
+
+Enable user to CRUD a strain reccomendation
+
+Build API with JavaScript to handle requests
 

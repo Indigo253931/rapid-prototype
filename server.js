@@ -3,21 +3,23 @@
 /////////////////////////////
 
 // Require and use Express
-var express = require("express");
+var express = require('express');
 var app = express();
 app.use(express.static('public'));
 
 // Require and use Body Parser
 var bodyParser = require('body-parser');
+app.use(express.json());
 // Support JSON-encoded bodies
 app.use(bodyParser.json());
-app.use(express.json());
+// Body parser config to accept datatypes
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // Require mongoose
-var mongoose = require("mongoose");
+var mongoose = require('mongoose');
 
 // Require model
-var Book = require('./models/strain');
+var Strain = require('./models/strain');
 
 
 /************
@@ -32,10 +34,13 @@ var db = require('./models');
 var strains = [];
 var nextId = 1;
 
+app.get('/', function homepage (req,res) {
+	res.sendFile('/public/index.html', { root : __dirname});
+});
+
 ////////////////////
 //  API ROUTES
 ///////////////////
-
 
 /*
  * HTML Endpoints
@@ -46,11 +51,10 @@ app.get('/', function homepage (req,res) {
 	res.sendFile(__dirname + '/public/index.html');
 });
 
-
 /*
  * JSON API Endpoints
  */
- app.get('/api', function api_index (req, res) {
+ app.get('/api/strains', function api_index (req, res) {
  	res.json({
  		message: 'Welcome to MyStrain!',
  		documentation_url: 'https://github.com/Indigo253931/rapid-prototype',
