@@ -6,5 +6,5 @@ var StrainSchema = new Schema({
 	activity: String
 });
 
-var Starin = mongoose.model('Strain', StrainSchema);
+var Strain = mongoose.model('Strain', StrainSchema);
 module.exports = Strain;
