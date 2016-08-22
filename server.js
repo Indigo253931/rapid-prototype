@@ -20,8 +20,8 @@ var mongoose = require('mongoose');
 /************
  * DATABASE *
  ************/
+ 
 var db = require('./server/models');
-
 
 ////////////////////
 //  DATA
@@ -30,23 +30,15 @@ var db = require('./server/models');
 var strains = [];
 var nextId = 1;
 
-/*
- * HTML Endpoints
-//  */
+/* * HTML Endpoints  */
 
-// app.get('/', function homepage (req,res) {
-// 	res.sendFile('/public/index.html', { root : __dirname});
-// });
-// // Serve static files from public folder
-// app.get('/', function homepage (req,res) {
-// 	res.sendFile(__dirname + '/public/index.html');
-// });
-
+app.get('/', function homepage (req,res) {
+	res.sendFile('/public/index.html', { root : __dirname});
+});
 
 ////////////////////
 //  API ROUTES
 ///////////////////
-
 
  app.get('/api', function api_index (req, res) {
  	res.json({
@@ -95,13 +87,6 @@ app.post('/api/strains/:strainId', function create (req, res) {
 			});
 		});
 });
-
-// Connect to mongodb
-// mongoose.connect(
-//   process.env.MONGOLAB_URI ||
-//   process.env.MONGOHQ_URL ||
-//   'mongodb://localhost/api/strains'
-// );
 
 
 /**********
