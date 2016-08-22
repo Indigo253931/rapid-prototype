@@ -3,12 +3,13 @@ var app = angular.module('MyStrain', ['ngRoute', 'ngResource']);
 console.log('Angular is working!');
 
 angular.module('MyStrain')
+
 	
 /////////////////
 // CONTROLLERS //
 /////////////////
 
-// .controller('StrainsController', StrainsController)
+ .controller('StrainsController', StrainsController)
 	.config(function($routeProvider){
 		$routeProvider
 		.when('/', {
@@ -20,13 +21,6 @@ angular.module('MyStrain')
 			controller: 'StrainsShowCtrl'
 		});
 	});
-
-
-var Strain = require('../models/Strain');
-
-
-// StrainsIndexCtrl.$inject=['$resource'];
-// StrainsShowCtrl.$inject=['$resource'];
 
 function StrainsController($resource){
 	var self = this;
@@ -53,23 +47,29 @@ function StrainsShowCtrl($resource) {
 	{
 		name: 'Cinex',
 		kind: 'Sativa',
-		activity: '',
-		description: 'The strain you reach for when that cup of coffee didn’t do the job. Providing wired euphoria that feeds creativity, this sativa can rekindle interest in tasks that may otherwise be a drag.',
+		activity: ['Dancing', 'Hiking'],
+		description: 'When that cup of coffee didn’t do the job. Providing wired euphoria that feeds creativity, this sativa can rekindle interest in tasks that may otherwise be a drag.'
 	},
 
 	{
-		name: 'Cinex',
-		kind: 'Sativa',
-		activity: '',
-		description: ''
+		name: 'True OG',
+		kind: 'Indica',
+		activity: ['Studying'],
+		description: 'Sometimes what you need to concentrate isn’t a strain that speeds your brain up, it’s one that can slow the brain down. The indica-dominant True OG knocks down stress and distractions for easier focus.'
 	},
 
 	{
-		name: 'Cinex',
+		name: 'Durban Poison',
 		kind: 'Sativa',
-		activity: '',
-		description: ''
-	}];
+		activity: ['Skiing'],
+		description: 'An unforgettable skiing experience!'
+	},
+	{ 		
+		name: 'Sour Diesel',
+		kind: 'Sativa',
+		activity: ['Concerts', 'Art'],
+		description: 'An energetic, exhilarating sativa that induces intense cerebral effects. '
+}];
 }
 
 function StrainsIndexCtrl($resource) {
@@ -77,25 +77,34 @@ function StrainsIndexCtrl($resource) {
 	{
 		name: 'Cinex',
 		kind: 'Sativa',
-		activity: '',
-		description: ''
+		activity: ['Dancing', 'Hiking'],
+		description: 'When that cup of coffee didn’t do the job. Providing wired euphoria that feeds creativity, this sativa can rekindle interest in tasks that may otherwise be a drag.'
 	},
 
 	{
-		name: 'Cinex',
-		kind: 'Sativa',
-		activity: '',
-		description: ''
+		name: 'True OG',
+		kind: 'Indica',
+		activity: ['Studying'],
+		description: 'Sometimes what you need to concentrate isn’t a strain that speeds your brain up, it’s one that can slow the brain down. The indica-dominant True OG knocks down stress and distractions for easier focus.'
 	},
 
 	{
-		name: 'Cinex',
+		name: 'Durban Poison',
 		kind: 'Sativa',
-		activity: '',
-		description: ''
-	}];
+		activity: ['Skiing'],
+		description: 'An unforgettable skiing experience!'
+	},
+	{ 		
+		name: 'Sour Diesel',
+		kind: 'Sativa',
+		activity: ['Concerts', 'Art'],
+		description: 'An energetic, exhilarating sativa that induces intense cerebral effects.'
+}];
 }
 
+/////////////////
+// Directives //
+/////////////////
 
 angular.module('MyStrain')
 .directive('myStrain', myStrain);
