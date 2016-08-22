@@ -10,8 +10,8 @@ angular.module('MyStrain')
 /////////////////
 
  .controller('StrainsController', StrainsController)
-	.config(function($routeProvider){
-		$routeProvider
+	.config(['$resourceProvider', function($resourceProvider){
+		$resourceProvider
 		.when('/', {
 			templateUrl: '/templates/strains-index.html',
 			controller: 'StrainsIndexCtrl'
@@ -20,7 +20,7 @@ angular.module('MyStrain')
 			templateUrl: '/templates/strains-show.html',
 			controller: 'StrainsShowCtrl'
 		});
-	});
+	}]);
 
 function StrainsController($resource){
 	var self = this;
