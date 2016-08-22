@@ -9,7 +9,6 @@ app.use(express.static('public'));
 
 // Require and use Body Parser
 var bodyParser = require('body-parser');
-app.use(express.json());
 // Support JSON-encoded bodies
 app.use(bodyParser.json());
 // Body parser config to accept datatypes
@@ -18,20 +17,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Require mongoose
 var mongoose = require('mongoose');
 
-// Require model
-var Strain = require('./models/strain');
-
-
 /************
  * DATABASE *
  ************/
-var db = require('./models');
+var db = require('./server/models');
 
-// var connect = require('connect');
-// var http = require('http');
-
-// var app = connect();
-// var server = http.createServer(app);
 
 ////////////////////
 //  DATA
@@ -39,11 +29,6 @@ var db = require('./models');
 
 var strains = [];
 var nextId = 1;
-
-
-////////////////////
-//  API ROUTES
-///////////////////
 
 /*
  * HTML Endpoints
@@ -57,10 +42,13 @@ var nextId = 1;
 // 	res.sendFile(__dirname + '/public/index.html');
 // });
 
-/*
- * JSON API Endpoints
- */
- app.get('/api/strains', function api_index (req, res) {
+
+////////////////////
+//  API ROUTES
+///////////////////
+
+
+ app.get('/api', function api_index (req, res) {
  	res.json({
  		message: 'Welcome to MyStrain!',
  		documentation_url: 'https://github.com/Indigo253931/rapid-prototype',
@@ -70,6 +58,10 @@ var nextId = 1;
  		]
  	});
  });
+
+ /*
+ * JSON API Endpoints
+ */
 
 //Get all strain pairing reccomendations
 app.get('/api/strains', function strainsIndex (req, res){
@@ -105,11 +97,11 @@ app.post('/api/strains/:strainId', function create (req, res) {
 });
 
 // Connect to mongodb
-mongoose.connect(
-  process.env.MONGOLAB_URI ||
-  process.env.MONGOHQ_URL ||
-  'mongodb://localhost/api/strains'
-);
+// mongoose.connect(
+//   process.env.MONGOLAB_URI ||
+//   process.env.MONGOHQ_URL ||
+//   'mongodb://localhost/api/strains'
+// );
 
 
 /**********

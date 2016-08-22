@@ -98,7 +98,6 @@ Use NPM to require Express:
 
 Require Mongoose in server.js
 
-
 Send two http requests to server
 	Use ngResource
 

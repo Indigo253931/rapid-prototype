@@ -1,6 +1,6 @@
 angular.module('MyStrain')
 
-	.controller('StrainsController', StrainsController)
+	// .controller('StrainsController', StrainsController)
 	.config(function($routeProvider){
 		$routeProvider
 		.when('/', {
@@ -19,6 +19,7 @@ var Strain = require('../models/Strain');
 /////////////////
 // CONTROLLERS //
 /////////////////
+
 StrainsIndexCtrl.$inject=['$resource'];
 StrainsShowCtrl.$inject=['$resource'];
 
