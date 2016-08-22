@@ -18,18 +18,24 @@ My Strain is a cannabis strain pairing guide.
 	A user can create, read, update and delete a strain pairing for personal reference and to share recccomendations with others. 
  
  	A user will also have the ability to enter a strain and/or an activity/symptom/, etc. 
+	Results provided may be sorted based on:
 
-	Results provided may be sorted based on best pairing, or randomly shuffled to provide a variety of choices for the user. 
+		 a.) best match 
 
-		Categories may include but are not limited to:
-		 Activities: (e.g. dance, study) 
-		 Conditions (e.g. insomnia, pain)
-		 Symptoms: (e.g. headache, nausea)
-		 Beverages (e.g. coffee, wine)
-		 Food (e.g. recipies)
-		 Music (e.g. genres, songs)
-		 Films (e.g. genres, movies)
-		 Games 
+		 b). top reviews
+
+		 c.) random shuffle triggered by a button click.
+		  		The goal of this is to provide user with an interactive variety of choices. 
+
+		Potential categories may include but are not limited to:
+			 Activities: (e.g. dance, study) 
+			 Conditions (e.g. insomnia, pain)
+			 Symptoms: (e.g. headache, nausea)
+			 Beverages (e.g. coffee, wine)
+			 Food (e.g. recipies)
+			 Music (e.g. genres, songs)
+			 Films (e.g. genres, movies)
+			 Games 
 
 
 /////////////////////////////
