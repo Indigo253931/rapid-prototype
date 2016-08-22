@@ -2,8 +2,6 @@ var express = require('express'),
 router = express.Router(),
 //Parse information from POST
 bodyParser = require('body-parser');
-//Manipulate POST
-methodOverride = require('method-override');
 
 var strainsController = require ('../controllers/strainsController');
 
@@ -27,4 +25,3 @@ router.route('/strains/:id')
 	.delete(strainsController.removeStrain);
 
 module.exports = router;
-

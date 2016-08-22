@@ -27,11 +27,11 @@ var Strain = require('./models/strain');
  ************/
 var db = require('./models');
 
-var connect = require('connect');
-var http = require('http');
+// var connect = require('connect');
+// var http = require('http');
 
-var app = connect();
-var server = http.createServer(app);
+// var app = connect();
+// var server = http.createServer(app);
 
 ////////////////////
 //  DATA
@@ -40,8 +40,6 @@ var server = http.createServer(app);
 var strains = [];
 var nextId = 1;
 
-app.use(express.static(__dirname + '/public/index.html'));
-
 
 ////////////////////
 //  API ROUTES
@@ -49,15 +47,15 @@ app.use(express.static(__dirname + '/public/index.html'));
 
 /*
  * HTML Endpoints
- */
+//  */
 
-app.get('/', function homepage (req,res) {
-	res.sendFile('/public/index.html', { root : __dirname});
-});
-// Serve static files from public folder
-app.get('/', function homepage (req,res) {
-	res.sendFile(__dirname + '/public/index.html');
-});
+// app.get('/', function homepage (req,res) {
+// 	res.sendFile('/public/index.html', { root : __dirname});
+// });
+// // Serve static files from public folder
+// app.get('/', function homepage (req,res) {
+// 	res.sendFile(__dirname + '/public/index.html');
+// });
 
 /*
  * JSON API Endpoints
@@ -95,9 +93,9 @@ app.get('/api/strains/:id', function strainsShow(req, res){
 // Create new strain pairing reccomendation
 app.post('/api/strains/:strainId', function create (req, res) {
 	console.log('body', req.body);
-	db.Strain.findOne({_id: req.params.strainId}, function(err, album){
+	db.Strain.findOne({_id: req.params.strainId}, function(err, strain){
 		if (err) {console.log('error', err); }
-			var strain = new db.Strain(req.body);
+			strain = new db.Strain(req.body);
 				strains.push(strain);
 				strain.save(function(err, savedStrain){
 				console.log('Strain pairing reccomendation saved:', savedStrain);
@@ -120,5 +118,5 @@ mongoose.connect(
 
 // Listen on port 3000
 app.listen(process.env.PORT || 3000, function(){
-console.log('Exoress server is up and running on http://localhost:/3000/');
+console.log('Express server is up and running on http://localhost:/3000/');
 });

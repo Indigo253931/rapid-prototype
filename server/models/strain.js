@@ -4,7 +4,7 @@ var Schema = mongoose.Schema;
 var StrainSchema = new Schema({
 	name: String,
 	kind: String,
-	activity: String,
+	activity: [String],
 	description: String
 });
 

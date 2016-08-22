@@ -19,8 +19,8 @@ var Strain = require('../models/Strain');
 /////////////////
 // CONTROLLERS //
 /////////////////
-StrainsIndexCtrl.$inject=['$resource', 'StrainService'];
-StrainsShowCtrl.$inject=['$resource', 'StrainService'];
+StrainsIndexCtrl.$inject=['$resource'];
+StrainsShowCtrl.$inject=['$resource'];
 
 function StrainsController($resource){
 	var self = this;

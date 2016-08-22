@@ -1,32 +1,52 @@
 body {
-
-
+	background-image: url('https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2016/05/12001327/7-high-energy-strains-to-help-you-get-active-and-fight-fatigue.jpg');
+	background-size: cover;
 }
 
-.container {
-
+input {
+	font-size: 25px;
+	text-shadow: 0 0 1px #bcf6c0;
+	color: black;
 }
 
+div.container {
+	background: rgb(255, 255, 255); 
+	background: rgba(255, 255, 255, .4); 
+	}
+
+/*Nav*/
 .navbar {
 
 }
-
-#strains {
-	
+/*App Name and form styles*/
+#app-name, #activity-form {
+	text-align: center;
 }
 
-.strain-name {
-	
+#app-name {
+	text-shadow: 0 0 3px #3dc584;
+	font-size: 50px;
+	font-family: Verdana;
+	font-weight: lighter;
+	transition: font-size 6s;
+	transition-delay: 2s;
+	transition-duration: 2s;
+	/*background-color:  #c1d8c9;*/
 }
 
-#newStrain-activity{
+#activity-form:hover {
+    font-size: 43px;
+   
+}
+
+#activity-form {
+	font-size: 40px;
+	text-shadow: 0 0 30px #5bb47c;
+	transition: font-size 5s;
+	transition-delay: 2s;
+	transition-duration: 2s;
+/*	background-color: #eaeaea;*/
+}
 
 }
 
-#newStrain-kind{
-
-}
-
-#newStrain-description{
-
-}

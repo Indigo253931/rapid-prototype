@@ -1,5 +1,5 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://locahost/myStrain');
+mongoose.connect('mongodb://locahost/api/strains');
 
 var Strain = require('./strain');
 
