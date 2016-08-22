@@ -59,6 +59,7 @@ app.get('/', function homepage (req,res) {
 app.get('/api/strains', function strainsIndex (req, res){
 	// Find strain data from database and save it as a variable 'strains'
 	db.Strain.find({}, function(err, strains){
+		if (err) { return console.log('index error: ' + err); }
 		// Send all strain pairing reccomendations as JSON response
 		res.json(strains);
 	});
@@ -69,23 +70,33 @@ app.get('/api/strains/:id', function strainsShow(req, res){
 	console.log('requested strain id=', req.params.id);
 		// Find one strain pairing reccomendation by Id
 	db.Strain.findOne({_id: req.params.id}, function(err, data){
+		if (err) { return console.log('show error: ' + err); }
 		// Send one strain pairing reccomendation as JSON response
 		res.json(strain);
 	});
 });
 
 // Create new strain pairing reccomendation
-app.post('/api/strains/:strainId', function create (req, res) {
+app.post('/api/strains', function strainsCreate (req, res) {
 	console.log('body', req.body);
-	db.Strain.findOne({_id: req.params.strainId}, function(err, strain){
-		if (err) {console.log('error', err); }
-			strain = new db.Strain(req.body);
-				strains.push(strain);
-				strain.save(function(err, savedStrain){
-				console.log('Strain pairing reccomendation saved:', savedStrain);
-				res.json(strain);
-			});
+var newStrain = new db.Strain({
+	name: req.body.name,
+	kind: req.body.kind,
+	activity: req.body.activity,
+	description: req.body.description,
+});
+	db.Strain.findOne({_id: req.params.strainId}, function(err, strain){			
+	// Save newSotrain to database
+    newStrain.save(function(err, strain){
+      if (err) {
+        return console.log("save error: " + err);
+      }
+      console.log('Strain pairing reccomendation saved:', strain.name);
+      // Send back the strain!
+		res.json(strain);
+		// strains.push(strain);
 		});
+	});
 });
 
 

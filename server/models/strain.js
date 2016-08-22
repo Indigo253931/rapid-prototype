@@ -9,4 +9,5 @@ var StrainSchema = new Schema({
 });
 
 var Strain = mongoose.model('Strain', StrainSchema);
+
 module.exports = Strain;
