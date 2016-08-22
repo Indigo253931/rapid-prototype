@@ -6,7 +6,7 @@ function StrainsShowCtrl($resource) {
 		name: 'Cinex',
 		kind: 'Sativa',
 		activity: '',
-		description: ''
+		description: 'The strain you reach for when that cup of coffee didn’t do the job. Providing wired euphoria that feeds creativity, this sativa can rekindle interest in tasks that may otherwise be a drag.',
 	},
 
 	{

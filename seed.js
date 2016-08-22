@@ -5,7 +5,7 @@ ALL_STRAINS = [
 {
 	'name': 'Cinex',
 	'kind': 'Sativa',
-	'activity': 'Mental Energy and Engagement',
+	'activity': ['Mental Energy', 'Engagement'],
 	'description': 'the strain you reach for when that cup of coffee didn’t do the job. Providing wired euphoria that feeds creativity, this sativa can rekindle interest in tasks that may otherwise be a drag. Take caution with this one if you’re prone to anxiety and racing thoughts; Cinex can turn that up in some individuals.'
 },
 {

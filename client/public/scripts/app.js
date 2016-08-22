@@ -1,13 +1,9 @@
 // Create an Angular module and use resource directive
 var app = angular.module('MyStrain', ['ngRoute', 'ngResource']);
-
 console.log('Angular is working!');
 
-app.use(function(req, res, next) {
-	console.log('Middleware hit');
-	console.log('%s request to %s', req.method, req.path);
-	next();
-});
+// Set up express app to serve static files in public directory
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   console.log('Home controller hit');
@@ -30,10 +26,10 @@ $.post({
 
 $.update({
 	method: 'PUT',
-	templateUrl: '/api/strains/id'
+	templateUrl: '/api/strains/:id'
 });
 
-$.update({
+$.delete({
 	method: 'DELETE',
-	templateUrl: '/api/strains/id'
+	templateUrl: '/api/strains/:id'
 });
