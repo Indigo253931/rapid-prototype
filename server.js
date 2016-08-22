@@ -27,6 +27,12 @@ var Strain = require('./models/strain');
  ************/
 var db = require('./models');
 
+var connect = require('connect');
+var http = require('http');
+
+var app = connect();
+var server = http.createServer(app);
+
 ////////////////////
 //  DATA
 ///////////////////
@@ -34,9 +40,8 @@ var db = require('./models');
 var strains = [];
 var nextId = 1;
 
-app.get('/', function homepage (req,res) {
-	res.sendFile('/public/index.html', { root : __dirname});
-});
+app.use(express.static(__dirname + '/public/index.html'));
+
 
 ////////////////////
 //  API ROUTES
@@ -46,6 +51,9 @@ app.get('/', function homepage (req,res) {
  * HTML Endpoints
  */
 
+app.get('/', function homepage (req,res) {
+	res.sendFile('/public/index.html', { root : __dirname});
+});
 // Serve static files from public folder
 app.get('/', function homepage (req,res) {
 	res.sendFile(__dirname + '/public/index.html');

@@ -15,21 +15,21 @@ https://trello.com/b/zOg3ctfH/mystrain
 /////////////////////////////
 
 My Strain is a cannabis strain pairing guide. 
+	A user can create, read, update and delete a strain pairing for personal reference and to share recccomendations with others. 
+ 
+ 	A user will also have the ability to enter a strain and/or an activity/symptom/, etc. 
 
 	Results provided may be sorted based on best pairing, or randomly shuffled to provide a variety of choices for the user. 
 
-		Categories and their subcategories include but are not limited to the following:
-		 Activities: (studying, surfing, meditation, etc.) 
-		 Conditions (insomnia, cancer, etc.)
-		 Symptoms: (headache, nausea, etc.)
-		 Beverages (coffee, beer, wine, etc.)
-		 Food (recipies, ingredients, etc.)
-		 Music (genres, songs, albums, etc.)
-		 Films (genres, movies, episodes)
-		 Games
-
-
- Additionally, users are enabled to create, read, update and delete a strain pairing reccomendation.
+		Categories may include but are not limited to:
+		 Activities: (e.g. dance, study) 
+		 Conditions (e.g. insomnia, pain)
+		 Symptoms: (e.g. headache, nausea)
+		 Beverages (e.g. coffee, wine)
+		 Food (e.g. recipies)
+		 Music (e.g. genres, songs)
+		 Films (e.g. genres, movies)
+		 Games 
 
 
 /////////////////////////////
