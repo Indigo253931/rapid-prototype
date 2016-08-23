@@ -2,7 +2,6 @@
 // Run `node seed.js` from the root of this project folder.
 
  var db = require('./server/models');
-// console.log("hello!");
 
 // Seed Data
 ALL_STRAINS = [
@@ -32,5 +31,3 @@ ALL_STRAINS = [
 		'activity': ['Concerts', 'Art'],
 		'description': 'An energetic, exhilarating sativa that induces intense cerebral effects.'
 }];
-
-// console.log("strains");
